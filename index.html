@@ -260,7 +260,7 @@ footer a:hover{color:var(--amber)}
     <div class="hero-grid">
       <div>
         <p class="hero-lede">
-          I'm Shrestha — a software engineer with <strong>4+ years owning production backend systems</strong>.
+          I'm Shrestha — a software engineer with <strong>nearly four years owning production backend systems</strong>.
           Most recently, I owned the backend of a car-buying marketplace inside
           <strong>Qatar Islamic Bank's app</strong>, serving 150,000+ users — from Django + GraphQL APIs
           to multi-tenant OEM inventory pipelines and a real-time EMI quote engine.
@@ -300,28 +300,32 @@ footer a:hover{color:var(--amber)}
 
     <article class="work-card reveal">
       <div class="work-top">
-        <span class="work-org">Ninja Tech · Dubai, UAE</span>
+        <span class="work-org">Qatar Islamic Bank (via Ninja Tech) · Doha / Dubai</span>
         <span class="work-meta">QIB Auto Marketplace · Aug 2024 — Aug 2026 · Software Engineer</span>
       </div>
       <h3>Car-buying marketplace inside Qatar Islamic Bank's app</h3>
       <p class="work-body">
-        Owned the backend of a marketplace used by <strong>150,000+ banking customers</strong> — designing and
-        maintaining the Django + GraphQL (Strawberry) APIs behind listings, test-drive booking, and offers.
-        Built multi-tenant ETL pipelines syncing OEM inventory from Porsche, Hyundai, Mercedes, and BMW
-        with per-source isolation and retry handling, and engineered a real-time offer &amp; EMI-quote engine
-        on Celery + Redis that replaced a fully manual offer process.
+        Designed and maintained the Django + GraphQL APIs on Azure/PostgreSQL behind listings, search,
+        test-drive booking, and offers for <strong>150,000+ banking customers</strong>. Built the test-drive
+        booking feature end to end, driving a <strong>65% increase in repeat visits</strong>. Engineered a
+        real-time offer &amp; EMI-quote engine on Celery + Redis that replaced a fully manual offer process,
+        built multi-tenant ETL pipelines syncing OEM inventory from Porsche, Hyundai, Mercedes, and BMW
+        with per-source isolation and retry/backoff, and replaced a 24-hour manual data sync across three
+        environments with automated GitLab CI jobs. Rolled out Sentry observability and GitLab CI/CD across
+        Azure (prod) and AWS (staging).
       </p>
       <div class="work-stats">
         <div class="wstat"><b>~70%</b><span>quote latency reduction</span></div>
+        <div class="wstat"><b>65%</b><span>more repeat visits via test-drive booking</span></div>
         <div class="wstat"><b>~50%</b><span>incident-resolution time cut</span></div>
-        <div class="wstat"><b>4 OEMs</b><span>integrated with isolation</span></div>
         <div class="wstat"><b>2 clouds</b><span>Azure prod · AWS staging parity</span></div>
       </div>
       <div class="tags">
-        <span class="tag">Python</span><span class="tag">Django</span><span class="tag">GraphQL / Strawberry</span>
+        <span class="tag">Python</span><span class="tag">Django</span><span class="tag">GraphQL</span>
         <span class="tag">Celery</span><span class="tag">Redis</span><span class="tag">PostgreSQL</span>
-        <span class="tag">Azure</span><span class="tag">Prometheus</span><span class="tag">OpenTelemetry</span>
-        <span class="tag">GitLab CI/CD</span><span class="tag">React</span>
+        <span class="tag">Azure</span><span class="tag">AWS</span><span class="tag">Sentry</span>
+        <span class="tag">Azure Monitor Logs</span><span class="tag">GitLab CI/CD</span><span class="tag">React</span>
+        <span class="tag">OpenAI</span>
       </div>
     </article>
 
@@ -354,22 +358,24 @@ footer a:hover{color:var(--amber)}
         <span class="work-org">H&amp;J Holding · Doha, Qatar</span>
         <span class="work-meta">Software Engineer · Mar 2023 — Aug 2024</span>
       </div>
-      <h3>Monolith → modular services for a food-delivery platform</h3>
+      <h3>Spring Boot microservices for a food-delivery platform</h3>
       <p class="work-body">
-        Re-architected Savvy Eats, a monolithic Meteor.js delivery app, into modular Node.js (Express) + React
-        services for delivery, payments, and promotions — <strong>halving feature-rollout time</strong>.
-        Rebuilt delivery tracking on WebSockets + Redis for live driver locations, shipped a React/Tailwind
-        admin panel for refunds and promotions, and deployed via Docker + GitLab CI/CD to DigitalOcean with
-        blue/green staging.
+        Developed and maintained the Spring Boot microservices powering Savvy Eats' logistics, delivery
+        management, and inventory systems at <strong>99.5% uptime</strong> — REST APIs (Spring MVC, JPA) for
+        order workflows, driver management, and tracking. Introduced JWT authentication and RBAC across
+        internal dashboards and driver portals, integrated third-party payment gateways and logistics APIs
+        with resilient retry logic, and deployed containerized services to DigitalOcean via GitLab CI/CD
+        with automated build, test, and staging pipelines.
       </p>
       <div class="work-stats">
-        <div class="wstat"><b>2×</b><span>faster feature rollout</span></div>
-        <div class="wstat"><b>Live</b><span>driver tracking on WebSockets</span></div>
-        <div class="wstat"><b>Blue/green</b><span>zero-drama deployments</span></div>
+        <div class="wstat"><b>99.5%</b><span>uptime across services</span></div>
+        <div class="wstat"><b>JWT + RBAC</b><span>multi-role access secured</span></div>
+        <div class="wstat"><b>Zero-downtime</b><span>containerized deployments</span></div>
       </div>
       <div class="tags">
-        <span class="tag">Node.js / Express</span><span class="tag">React</span><span class="tag">WebSockets</span>
-        <span class="tag">Redis</span><span class="tag">Docker</span><span class="tag">DigitalOcean</span>
+        <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Spring MVC</span>
+        <span class="tag">JPA</span><span class="tag">Redis</span><span class="tag">Docker</span>
+        <span class="tag">DigitalOcean</span><span class="tag">GitLab CI/CD</span>
       </div>
     </article>
 
@@ -401,13 +407,12 @@ footer a:hover{color:var(--amber)}
           A system that ingests unstructured financial documents — PDFs, images, JSON, APIs — and extracts
           structured insights for <strong>compliance and credit-assessment workflows</strong>. Built on the same
           patterns I trust in production: a multi-tenant ETL architecture with isolated per-source parsing
-          pipelines, full observability (Prometheus, Grafana, OpenTelemetry, Sentry), and
-          Terraform-provisioned AWS infrastructure.
+          pipelines, Sentry observability, and AWS infrastructure (S3, RDS, ECS).
         </p>
         <div class="tags">
           <span class="tag">OpenAI</span><span class="tag">FastAPI</span><span class="tag">Celery</span>
           <span class="tag">Redis</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span>
-          <span class="tag">Terraform</span><span class="tag">S3 · RDS · ECS</span>
+          <span class="tag">Sentry</span><span class="tag">AWS · S3 · RDS · ECS</span>
         </div>
       </div>
       <div class="terminal reveal" aria-hidden="true">
@@ -431,9 +436,9 @@ footer a:hover{color:var(--amber)}
     <div class="tl">
       <div class="tl-item reveal">
         <div class="tl-date">2024 — 2026</div>
-        <h4>Lead Software Engineer · Ninja Tech</h4>
-        <div class="tl-sub">QIB Auto Marketplace · Dubai / Doha</div>
-        <p>Owned the backend of a 150K+ user car-buying platform inside Qatar Islamic Bank's app — APIs, OEM data pipelines, real-time pricing, observability, and CI/CD across Azure and AWS.</p>
+        <h4>Software Engineer · Qatar Islamic Bank (via Ninja Tech)</h4>
+        <div class="tl-sub">QIB Auto Marketplace · Doha / Dubai</div>
+        <p>Built and maintained the backend of a 150K+ user car-buying platform inside Qatar Islamic Bank's app — APIs, test-drive booking, OEM data pipelines, real-time pricing, observability, and CI/CD across Azure and AWS.</p>
       </div>
       <div class="tl-item reveal">
         <div class="tl-date">2023 — 2025</div>
@@ -445,7 +450,7 @@ footer a:hover{color:var(--amber)}
         <div class="tl-date">2023 — 2024</div>
         <h4>Software Engineer · H&amp;J Holding</h4>
         <div class="tl-sub">Savvy Eats · Doha, Qatar</div>
-        <p>Broke a monolith into services, made delivery tracking real-time, and made deployments boring — in the good way.</p>
+        <p>Ran Spring Boot microservices for logistics and delivery at 99.5% uptime, locked down access with JWT + RBAC, and made deployments boring — in the good way.</p>
       </div>
       <div class="tl-item reveal">
         <div class="tl-date">2022</div>
@@ -478,15 +483,16 @@ footer a:hover{color:var(--amber)}
       <div class="stack-cell reveal">
         <h5>Backend &amp; Frontend</h5>
         <div class="tags">
-          <span class="tag">Django</span><span class="tag">FastAPI</span><span class="tag">GraphQL (Strawberry)</span>
-          <span class="tag">Node.js</span><span class="tag">Celery</span><span class="tag">REST</span><span class="tag">React</span>
+          <span class="tag">Django</span><span class="tag">FastAPI</span><span class="tag">GraphQL</span>
+          <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">Celery</span>
+          <span class="tag">REST</span><span class="tag">React</span>
         </div>
       </div>
       <div class="stack-cell reveal">
         <h5>Cloud &amp; DevOps</h5>
         <div class="tags">
           <span class="tag">Azure</span><span class="tag">AWS</span><span class="tag">Docker</span>
-          <span class="tag">Kubernetes</span><span class="tag">GitLab CI/CD</span><span class="tag">Terraform</span>
+          <span class="tag">GitLab CI/CD</span>
         </div>
       </div>
       <div class="stack-cell reveal">
@@ -499,8 +505,7 @@ footer a:hover{color:var(--amber)}
       <div class="stack-cell reveal">
         <h5>Observability</h5>
         <div class="tags">
-          <span class="tag">Prometheus</span><span class="tag">Grafana</span>
-          <span class="tag">Sentry</span><span class="tag">OpenTelemetry</span>
+          <span class="tag">Sentry</span><span class="tag">Azure Monitor Logs</span>
         </div>
       </div>
       <div class="stack-cell reveal">
